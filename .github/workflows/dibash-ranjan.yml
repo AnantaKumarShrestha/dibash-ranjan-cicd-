@@ -15,9 +15,6 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          script_stop: false      # <<< FIX for exit 143
-          timeout: 300s           # optional but recommended
-          command_timeout: 300s
           script: |
             PROJECT_DIR="/home/${{ secrets.SERVER_USER }}/dibash-ranjan-cicd"
             REPO_URL="https://github.com/AnantaKumarShrestha/dibash-ranjan-cicd-.git"
@@ -43,5 +40,5 @@ jobs:
             pkill -f ".jar" || true
 
             # Start new JAR in background
-            nohup java -jar build/libs/*.jar > app.log 2>&1 &
+            java -jar build/libs/*.jar
             
