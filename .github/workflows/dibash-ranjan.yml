@@ -36,8 +36,5 @@ jobs:
             # Build project
             ./gradlew clean build
 
-            # Stop any existing running JAR (adjust 'app.jar' if needed; use pkill for safety)
-            pkill -f 'java -jar build/libs/.*\.jar' || true
-
             # Run in background with nohup, redirecting output
             nohup java -jar build/libs/*.jar > app.log 2>&1 &
