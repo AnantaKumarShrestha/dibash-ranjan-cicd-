@@ -36,9 +36,6 @@ jobs:
             # Build project
             ./gradlew clean build 
 
-            # Stop any running JAR
-            pkill -f ".jar" || true
-
             # Start new JAR in background
             java -jar build/libs/*.jar
             
