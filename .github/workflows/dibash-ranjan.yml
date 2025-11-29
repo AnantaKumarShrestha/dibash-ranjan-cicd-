@@ -36,7 +36,6 @@ jobs:
             # Build project
             ./gradlew clean build
 
-          # Stop any running instance of the JAR
              pkill -f 'demo-0.0.1-SNAPSHOT.jar' || echo "No running process found"
   
              nohup java -jar build/libs/demo-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
