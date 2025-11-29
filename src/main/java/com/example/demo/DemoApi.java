@@ -9,7 +9,7 @@ public class DemoApi {
 
     @GetMapping("/hello")
     public String index() {
-        return "Hello World kk";
+        return "Hello World ranjan";
     }
 
 }
