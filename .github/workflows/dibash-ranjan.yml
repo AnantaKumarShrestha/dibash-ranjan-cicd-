@@ -36,6 +36,8 @@ jobs:
             # Build project
             ./gradlew clean build 
 
-            # Start new JAR in background
-            java -jar build/libs/*.jar
-            
+            # Stop any running JAR
+            pkill -f ".jar" || true
+
+            # Start new JAR in background with nohup
+            nohup java -jar build/libs/*.jar > output.log 2>&1 &
