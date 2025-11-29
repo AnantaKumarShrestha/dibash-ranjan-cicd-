@@ -40,5 +40,5 @@ jobs:
             pkill -f ".jar" || true
 
             # Start new JAR in background
-            java -jar build/libs/*.jar
+            nohup java -jar build/libs/*.jar > app.log 2>&1 &
             
